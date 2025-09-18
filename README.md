@@ -1,69 +1,76 @@
-# React + TypeScript + Vite
+# Pair of employees who have worked together
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A React + TypeScript + Vite application for finding pairs of employees who have worked together on projects for the longest periods.
 
-Currently, two official plugins are available:
+The app allows you to:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Upload a CSV file of employee project assignments.
+- Automatically parse the data and calculate overlapping work periods.
+- View results in an interactive Ant Design table.
+- Highlight the pairs of employees with the most total days worked together.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Getting Started
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+### 1. Clone the repository
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+git clone git@github.com:ivatsaneva/Iva-Tsaneva-employees.git
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install dependencies
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
+This project uses **pnpm** as the package manager.  
+If you don’t have it installed:
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install -g pnpm
 ```
+
+Then install dependencies:
+
+```bash
+pnpm install
+```
+
+### 3. Run the development server
+
+```bash
+pnpm dev
+```
+
+The app will be available at [http://localhost:5173](http://localhost:5173).
+
+### 4. Build for production
+
+```bash
+pnpm build
+```
+
+### 5. Preview production build
+
+```bash
+pnpm preview
+```
+
+---
+
+## 📂 Example CSV
+
+An example CSV file is included for testing purposes:  
+**`employees_extended.csv`**
+
+This file contains sample employee/project data with overlapping work periods.
+
+## 🛠️ Tech Stack
+
+- [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/) for build tooling
+- [Ant Design](https://ant.design/) for UI components
+- [styled-components](https://styled-components.com/) for custom styling
+- [dayjs](https://day.js.org/) for date parsing & calculations
+
+---
+
+✅ **Task done by Iva Tsaneva**

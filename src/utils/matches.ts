@@ -15,7 +15,7 @@ export function calculateMatchingDays(
   const start = firstFrom.isAfter(secondFrom) ? firstFrom : secondFrom;
   const end = firstTo.isBefore(secondTo) ? firstTo : secondTo;
   if (end.isBefore(start)) return 0;
-  return end.diff(start, 'day') + 1;
+  return end.diff(start, 'day');
 }
 
 export function findMatches(records: Employee[]) {

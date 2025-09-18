@@ -28,7 +28,13 @@ function App() {
       <VerticalSpace direction="vertical" size="middle">
         <Card>
           {topPairs.length ? (
-            <Space wrap>
+            <Space
+              style={{
+                display: 'flex',
+                flexDirection: 'column',
+                alignItems: 'flex-start',
+              }}
+            >
               {topPairs.map((p) => (
                 <div key={p.key} className="ant-tag ant-tag-blue">
                   <Text>IDs of employees who have worked together: </Text>
